@@ -1,0 +1,54 @@
+﻿@model MvcWebRole.Models.Task
+
+@{
+    ViewBag.Title = "Create task";
+}
+
+<h2>Create task for solver</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Left)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Left)
+            @Html.ValidationMessageFor(model => model.Left)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Right)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Right)
+            @Html.ValidationMessageFor(model => model.Right)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Step)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Step)
+            @Html.ValidationMessageFor(model => model.Step)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+    
+    <div>
+    @Html.ActionLink("Back to Beginning", "Index")
+    </div>
+}

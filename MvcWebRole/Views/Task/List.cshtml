@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MvcWebRole.Models.Task>
+
+@{
+    ViewBag.Title = "Tasks list";
+}
+
+<h2>Tasks list</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Left)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Right)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Step)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Left)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Right)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Step)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+    </tr>
+}
+</table>
